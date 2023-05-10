@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row g-2">
+        <div class="col-md-4" *ngFor="let categ of allCategories">
+            <div>
+<a [routerLink]="['subcategories',categ._id]" >
+
+
+    <img [src]="categ.image" width="350" height="320" class="" alt="" srcset="">
+<h5 class="text-success text-center m-lg-2">{{categ.name}}</h5>
+</a>
+            </div>
+        </div>
+    </div>
+</div>
+

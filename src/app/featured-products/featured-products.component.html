@@ -1,0 +1,9 @@
+<div class="container">
+
+    <input type="text" class="form-control mx-auto my-5 w-75" [(ngModel)]="searchProduct" >
+    <div class="row">
+        <div class="col-md-2" *ngFor="let product of allProducts | searchProducts:searchProduct">
+<app-product-item [product]="product"></app-product-item>
+        </div>
+    </div>
+</div>

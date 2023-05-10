@@ -1,0 +1,15 @@
+<div class="product px-2 py-4">
+<a [routerLink]="['/productDetails',product.id]" class="list-unstyled">
+    <img [src]="product.imageCover" class="img-fluid" alt="">
+<p class="text-success mb-0">{{product.category.name}}</p>
+<h2 class="h6 cursor-pointer" data-bs-toggle="tooltip" [title]="product.title">{{product.title.split(" ").slice(0,2).join(" ")}}</h2>
+<div class="d-flex justify-content-between mb-2">
+    <span>{{product.price|concat:'Total : '}}</span>
+    <div>
+        <i class="fa fa-star text-warning"></i>
+        <span >{{product.ratingsAverage}}</span>
+    </div>
+</div>
+</a>
+<button class="btn btn-success w-100 p-1" (click)="addProduct(product.id)">+ Add</button>
+</div>

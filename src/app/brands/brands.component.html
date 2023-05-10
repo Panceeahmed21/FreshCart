@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row g-2">
+  <div class="col-md-4" *ngFor="let brand of allBrands">
+            <div>
+    <img [src]="brand.image" width="350" height="320" class="" alt="" srcset="">
+<h5 class="text-success text-center m-lg-2">{{brand.name}}</h5>
+
+            </div>
+        </div>
+    </div>
+</div>
+

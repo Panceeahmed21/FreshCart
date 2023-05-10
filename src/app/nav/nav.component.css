@@ -1,0 +1,18 @@
+.logo-img{
+    width: 15%;
+}
+
+.img-logo{
+    width: 100%;
+}
+.nav-link{
+    color: black;
+    font-weight: 400;
+}
+nav a {
+    cursor: pointer;
+}
+.nav-link:hover{
+    background-color: #198754;
+color: white;
+}

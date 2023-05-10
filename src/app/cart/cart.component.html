@@ -1,0 +1,42 @@
+
+<div class="container">
+    <div class="main-light-bg p-3">
+<div class="d-flex justify-content-between mb-3">
+    <h2>Cart Shop</h2>
+    <button class="btn btn-success">
+        <a [routerLink]="['/checkout',cartDetails.data._id]" class="text-white text-decoration-none ">Continue to pay</a>
+    </button>
+</div>
+<div class="d-flex justify-content-between align-items-center" *ngIf="cartDetails">
+    <p>Total price : <span class="text-success">{{cartDetails.data.totalCartPrice}}</span></p>
+    <p>Total Numbers : <span class="text-success">{{cartDetails.numOfCartItems}}</span></p>
+</div>
+    <div class="row mb-2 row-bottom p-3" *ngFor=" let x =last ;let product of cartDetails.data.products | filterCart" 
+    [style]="x?'border-bottom:0' : ''" >
+<div class="col-md-1">
+
+<img [src]="product.product.imageCover" class="img-fluid" alt="" srcset="">
+</div>
+<div class="col-md-11">
+<div class="d-flex justify-content-between  align-items-center">
+
+    <div>
+        <h5 class="max-width">{{product.product.title}}</h5>
+        <h6 class="text-success">{{product.price}} EGP</h6>
+        <button class=" btn btn-sm text-danger m-0 p-0" (click)="deleteItem(product.product.id)">
+           <i class="fa-regular fa-trash-can"></i>
+            Remove</button>
+      </div>
+      <div>
+        <div class="btn btn-border btn-sm " (click)="updateCart(product.product.id,product.count+1)">+</div>
+    <span class="mx-2">{{product.count}}</span>
+        <div class="btn btn-border btn-sm " (click)="updateCart(product.product.id,product.count-1)">-</div>
+    
+      </div>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>

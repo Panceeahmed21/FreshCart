@@ -1,0 +1,14 @@
+.main-light-bg{
+    background-color: rgb(216, 216, 216);
+}
+.row-bottom{
+border-bottom: 1px solid rgb(57, 144, 57);
+}
+
+.btn-border{
+    border: 1px solid rgb(57, 144, 57);
+}
+
+.max-width{
+    max-width: 800px;
+}
