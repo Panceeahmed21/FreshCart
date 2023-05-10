@@ -9,7 +9,6 @@
 <input type="text" id="name" formControlName="name" class="form-control">
 
 <div *ngIf="registerForm.get('name')?.errors &&( registerForm.get('name')?.touched || isNotValidForm)" class="alert alert-danger p-2" >
-
     <p  *ngIf="registerForm.get('name')?.getError('required')"  class="mb-0"> Name is required </p>
     <p *ngIf="registerForm.get('name')?.getError('minlength')" class="mb-0">Name min length is 3</p>
     <p *ngIf="registerForm.get('name')?.getError('maxlength') "  class="mb-0">Name max length is 10</p>
@@ -77,6 +76,9 @@
 
 
 
+
+
+    
 
     </form>
 

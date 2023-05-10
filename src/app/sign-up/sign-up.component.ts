@@ -18,7 +18,8 @@ constructor( private _authService:AuthService,private _router:Router){
 registerForm:FormGroup=new FormGroup(
 
   {
- 
+    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     password:new FormControl("",[Validators.required,Validators.pattern(/^[A-Za-z0-9]{3,8}$/)]),
     rePassword:new FormControl("",[Validators.required,Validators.pattern(/^[A-Za-z0-9]{3,8}$/)]),
     phone:new FormControl("",[Validators.required,Validators.minLength(10),Validators.maxLength(13)])
@@ -44,6 +45,7 @@ error:(err)=>{
   }
 else{
   this.isNotValidForm=true
+  
 }
 }
 
